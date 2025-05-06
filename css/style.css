@@ -1,0 +1,356 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  color: #343434;
+}
+
+/* Navbar */
+.navbar-custom {
+  transition: all 0.4s ease;
+  padding: 20px 0 30px;
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-custom.scrolled {
+  background-color: #fff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: white !important;
+  transition: color 0.3s;
+}
+
+.navbar-custom.scrolled .nav-link,
+.navbar-custom.scrolled .navbar-brand {
+  color: #000 !important;
+}
+
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  background: url("../imgs/bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Changing Words */
+.changing-words {
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.changing-words span {
+  display: block;
+  animation: rotateWords 6s linear infinite;
+}
+
+@keyframes rotateWords {
+  0% {
+    transform: translateY(0%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-200%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.changing-words {
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.changing-words span > span {
+  display: block;
+  height: 40px;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+/* about section */
+#about .dots-bg {
+  position: absolute;
+  left: -20px;
+  bottom: -20px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 10px 10px;
+  z-index: -1;
+}
+
+/* services section */
+#services h2 .dot {
+  color: #000;
+}
+
+.service-box {
+  transition: transform 0.3s ease;
+}
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #333;
+  margin: 0 auto 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.service-box:hover .icon-circle {
+  background-color: #000;
+  color: #fff;
+}
+
+/* portfolio section */
+.portfolio-item {
+  cursor: pointer;
+  position: relative;
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portfolio-item .overlay h6 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #111;
+}
+
+.portfolio-item .icons {
+  display: flex;
+  gap: 15px;
+}
+
+.portfolio-item .icons i {
+  background-color: #111;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.portfolio-item .icons i:hover {
+  background-color: #555;
+}
+
+/* Filter nav styling */
+.portfolio-filter .nav-link {
+  color: #000;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+.portfolio-filter .nav-link.active,
+.portfolio-filter .nav-link:hover {
+  color: #000;
+}
+.portfolio-filter .nav-link.active::after,
+.portfolio-filter .nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+}
+
+/* Testimonials part */
+.dot {
+  color: #111;
+}
+
+.carousel-indicators {
+  justify-content: center;
+  position: static;
+  margin-top: 1.5rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  opacity: 0.5;
+  margin: 0 6px;
+  border: none;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #111;
+  opacity: 1;
+}
+
+/* our team section */
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.team-card:hover .overlay {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.team-card .icons a {
+  display: inline-block;
+  margin: 0 8px;
+  color: #000;
+  font-size: 18px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.team-card .icons a:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* contaact us part  */
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-icon:hover {
+  background: #000;
+  color: #fff;
+}
+
+#contact .form-control {
+  background: #f8f8f8;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 15px;
+}
+
+.btn-dark {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-dark:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* footer */
+footer {
+  background-color: #1a1a1a;
+  color: #888;
+  font-size: 14px;
+}
+
+footer .text-primary {
+  color: #4fc3f7;
+}
